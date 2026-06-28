@@ -2,5 +2,3 @@
 .env.example
 /node_modules
 /.next
-/public
-/database
