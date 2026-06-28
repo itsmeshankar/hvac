@@ -1,0 +1,2 @@
+﻿import { AdminCrudPage } from "@/components/admin/admin-crud-page";
+export default function FaqAdminPage() { return <AdminCrudPage title="FAQs" endpoint="/api/admin/faqs" fields={[{ name: "question", label: "Question", required: true }, { name: "answer", label: "Answer", type: "textarea", required: true }, { name: "category", label: "Category" }, { name: "sort_order", label: "Sort order", type: "number" }, { name: "status", label: "Status", type: "select", options: ["published", "draft"] }]} />; }
