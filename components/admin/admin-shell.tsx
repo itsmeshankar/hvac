@@ -98,7 +98,7 @@ function DesktopSidebar({
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 left-0 z-40 hidden border-r border-graphite-100 bg-white p-4 transition-[width] duration-brand lg:block",
+        "fixed inset-y-0 left-0 z-40 hidden border-r border-graphite-100 bg-white p-2 transition-[width] duration-brand lg:block",
         collapsed ? "w-24" : "w-72",
       )}
     >
@@ -130,7 +130,7 @@ function DesktopSidebar({
       {collapsed ? (
         <button
           onClick={onToggle}
-          className="mx-auto mt-4 flex h-10 w-10 items-center justify-center rounded-brand text-graphite-500 hover:bg-graphite-50"
+          className="mx-auto mt-2 flex h-10 w-10 items-center justify-center rounded-brand text-graphite-500 hover:bg-graphite-50"
           aria-label="Expand sidebar"
         >
           <PanelLeftOpen size={20} />
@@ -148,11 +148,23 @@ function DesktopSidebar({
           />
         ))}
       </nav>
-      <a href="/admin/dashboard" target="_blank" rel="noreferrer" className={cn("mt-6 flex w-full items-center rounded-brand px-4 py-3 text-sm font-bold text-sky-600 hover:bg-sky-100", collapsed ? "justify-center" : "gap-3")} title="Open dashboard in new tab"><ExternalLink size={18} />{!collapsed ? "Dashboard tab" : null}</a>
+      <a
+        href="/admin/dashboard"
+        target="_blank"
+        rel="noreferrer"
+        className={cn(
+          "mt-2 flex w-full items-center rounded-brand px-4 py-3 text-sm font-bold text-sky-600 hover:bg-sky-100",
+          collapsed ? "justify-center" : "gap-3",
+        )}
+        title="Open dashboard in new tab"
+      >
+        <ExternalLink size={18} />
+        {!collapsed ? "Dashboard tab" : null}
+      </a>
       <button
         onClick={onLogout}
         className={cn(
-          "mt-6 flex w-full items-center rounded-brand px-4 py-3 text-sm font-bold text-orange-600 hover:bg-orange-100",
+          "mt-2 flex w-full items-center rounded-brand px-4 py-3 text-sm font-bold text-orange-600 hover:bg-orange-100",
           collapsed ? "justify-center" : "gap-3",
         )}
         title="Logout"
@@ -179,7 +191,7 @@ function SidebarLink({
       href={item.href}
       title={item.label}
       className={cn(
-        "flex items-center rounded-brand px-4 py-3 text-sm font-semibold transition",
+        "flex items-center rounded-brand px-4 py-2 text-sm font-semibold transition",
         collapsed ? "justify-center" : "gap-3",
         active
           ? "bg-navy-900 text-white"
@@ -280,4 +292,3 @@ function MobileDrawer({
     </div>
   );
 }
-
